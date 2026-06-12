@@ -73,3 +73,4 @@ There are two Dockerfiles in this folder:
 ## Notes
 
 - The frontend uses Vite, React, Tailwind CSS, Zustand, Axios, React Router, and Sonner.
+- Set `VITE_API_URL` in Vercel to point to your deployed backend, for example `https://your-backend.onrender.com`.

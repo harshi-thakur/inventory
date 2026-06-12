@@ -1,6 +1,6 @@
 """Application configuration."""
+
 from pydantic_settings import BaseSettings
-from typing import Optional
 
 
 class Settings(BaseSettings):
@@ -13,6 +13,12 @@ class Settings(BaseSettings):
     APP_NAME: str = "Inventory API"
     APP_VERSION: str = "1.0.0"
     DEBUG: bool = False
+    FRONTEND_URL: str = "http://localhost:5173"
+
+    @property
+    def cors_origins(self):
+        """Return the single configured allowed CORS origin."""
+        return [self.FRONTEND_URL.strip()] if self.FRONTEND_URL.strip() else []
     
     class Config:
         env_file = ".env"

@@ -82,6 +82,13 @@ DATABASE_URL=postgresql://username:password@localhost:5432/inventory
 APP_NAME=Inventory API
 APP_VERSION=1.0.0
 DEBUG=False
+FRONTEND_URL=http://localhost:5173
+```
+
+For deployment, set `FRONTEND_URL` to the deployed frontend URL, for example:
+
+```bash
+FRONTEND_URL=https://your-frontend.vercel.app
 ```
 
 ### 5. Run Application
@@ -94,6 +101,13 @@ Access the API:
 - API: http://localhost:8000
 - Swagger Docs: http://localhost:8000/docs
 - ReDoc: http://localhost:8000/redoc
+
+## Deployment
+
+When deploying the backend to Render and the frontend to Vercel, configure these environment variables:
+
+- Backend: `FRONTEND_URL=https://your-frontend.vercel.app`
+- Frontend: `VITE_API_URL=https://your-backend.onrender.com`
 
 ## Database Models
 
