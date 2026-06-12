@@ -82,14 +82,18 @@ DATABASE_URL=postgresql://username:password@localhost:5432/inventory
 APP_NAME=Inventory API
 APP_VERSION=1.0.0
 DEBUG=False
-FRONTEND_URL=http://localhost:5173
+FRONTEND_URL=http://localhost:3000
 ```
+
+For local Vite development, use `http://localhost:5173`. For local Docker, use `http://localhost:3000`.
 
 For deployment, set `FRONTEND_URL` to the deployed frontend URL, for example:
 
 ```bash
 FRONTEND_URL=https://your-frontend.vercel.app
 ```
+
+If you need more than one allowed origin, use `FRONTEND_URLS` with comma-separated values.
 
 ### 5. Run Application
 
@@ -106,7 +110,7 @@ Access the API:
 
 When deploying the backend to Render and the frontend to Vercel, configure these environment variables:
 
-- Backend: `FRONTEND_URL=https://your-frontend.vercel.app`
+- Backend: `FRONTEND_URL=https://your-frontend.vercel.app` or `FRONTEND_URLS=...`
 - Frontend: `VITE_API_URL=https://your-backend.onrender.com`
 
 ## Database Models
